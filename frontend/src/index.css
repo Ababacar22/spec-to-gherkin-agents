@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #3f3b45;
+  --text-h: #14111a;
+  --text-muted: #8b8592;
+  --border: #e7e4ea;
+  --accent-from: #7c3aed;
+  --accent-to: #ec4899;
+  --accent-solid: #7c3aed;
+  --ok: #16a34a;
+  --warn: #d97706;
+  --code-bg: #14111a;
+  --code-text: #e9e6f0;
+}
+
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    --bg: #0f0d13;
+    --surface: #17141c;
+    --text: #cbc6d4;
+    --text-h: #f4f2f8;
+    --text-muted: #837c8f;
+    --border: #2a2531;
+    --accent-solid: #c084fc;
+    --code-bg: #0a090d;
+    --code-text: #e9e6f0;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f0d13;
+  --surface: #17141c;
+  --text: #cbc6d4;
+  --text-h: #f4f2f8;
+  --text-muted: #837c8f;
+  --border: #2a2531;
+  --accent-solid: #c084fc;
+  --code-bg: #0a090d;
+  --code-text: #e9e6f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+.gradient-title {
+  background-image: linear-gradient(100deg, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dashed-sep {
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--border) 0,
+    var(--border) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.pill-btn {
+  border-radius: 999px;
+}
